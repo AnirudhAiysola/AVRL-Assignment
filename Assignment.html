@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVRL</title>
+    <style>
+    .circle {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+    }
+
+        .first{
+        background: #00008b;
+        }
+
+        .third{
+        background: #008000;
+        }
+
+        .second{
+        background: #FF0000;
+        }
+
+        .fourth{
+        background: #FFFF00;
+        }
+
+        .container {
+        display: flex;
+        position: relative;
+        width: 200px;
+        justify-content: space-between;
+        }
+
+        .first-container{
+        position: absolute;
+        top: 100px;     
+        right: 615px;   
+        }
+
+        .second-container{
+        position: absolute;
+        top: 260px;
+        right: 615px;
+        }
+
+        .button-container{
+           display: flex;
+           justify-content: space-evenly; 
+           position: fixed;
+           top: 400px;
+           left: 580px;
+        }
+        .button-container button
+        {
+            background-color: #026685;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .animate-first {
+        animation-name: width-expand;
+        animation-duration: 8s;
+        border-radius: 20px;
+        position: absolute;
+        left: 0;
+        z-index: 4;
+        animation-iteration-count: infinite;
+        }
+
+        .animate-second {
+        animation-name: height-expand;
+        animation-duration: 8s;
+        border-radius: 20px;
+        position: absolute;
+        right: 0;
+        z-index: 3;
+        animation-iteration-count: infinite;
+        }
+        .animate-third {
+        animation-name: height-reverse;
+        animation-duration: 8s;
+        border-radius: 20px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation-iteration-count: infinite;
+        }
+
+        .animate-fourth {
+        animation-name: width-reverse;
+        animation-duration: 8s;
+        border-radius: 20px;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        animation-iteration-count: infinite;
+        }
+
+        @keyframes height-expand {
+        0% {
+            height: 40px;
+        }
+        12.5% {
+            height: 200px;
+        }
+        25% {
+            height: 40px;
+            background-color: #FFFF00;
+        }
+        37.5% {
+            height: 200px;
+        }
+        50% {
+            height: 40px;
+            background-color: #008000;
+        }
+        62.5% {
+            height: 200px;
+        }
+        75% {
+            height: 40px;
+            background-color: #00008b;
+        }
+        87.5% {
+            height: 200px;
+        }
+        100% {
+            height: 40px;
+            background-color: #FF0000;
+        }
+        }
+
+        @keyframes height-reverse {
+        0% {
+            height: 40px;
+            top: 0px;
+        }
+        12.5% {
+            height: 200px;
+            top: -160px;
+        }
+        25% {
+            height: 40px;
+            background-color: #00008b;
+            top: 0px;
+        }
+        37.5% {
+            height: 200px;
+            top: -160px;
+        }
+        50% {
+            height: 40px;
+            background-color: #FF0000;
+            top: 0px;
+        }
+        62.5% {
+            height: 200px;
+            top: -160px;
+        }
+        75% {
+            height: 40px;
+            background-color: #FFFF00;
+            top: 0px;
+        }
+        87.5% {
+            height: 200px;
+            top: -160px;
+        }
+        100% {
+            height: 40px;
+            background-color: #008000;
+            top: 0px;
+        }
+        }
+
+
+        @keyframes width-expand {
+        0% {
+            width: 40px;
+        }
+        12.5% {
+            width: 200px;
+        }
+        25% {
+            width: 40px;
+            background-color: #FF0000;
+        }
+        37.5% {
+            width: 200px;
+        }
+        50% {
+            width: 40px;
+            background-color: #FFFF00;
+        }
+        62.5% {
+            width: 200px;
+        }
+        75% {
+            width: 40px;
+            background-color: #008000;
+        }
+        87.5% {
+            width: 200px;
+        }
+        100% {
+            width: 40px;
+            background-color: #00008b;
+        }
+        }
+
+
+        @keyframes width-reverse {
+        0% {
+            width: 40px;
+        }
+        12.5% {
+            width: 200px;
+        }
+        25% {
+            width: 40px;
+            background-color: #008000;
+        }
+        37.5% {
+            width: 200px;
+        }
+        50% {
+            width: 40px;
+            background-color: #00008b;
+        }
+        62.5% {
+            width: 200px;
+        }
+        75% {
+            width: 40px;
+            background-color: #FF0000;
+        }
+        87.5% {
+            width: 200px;
+        }
+        100% {
+            width: 40px;
+            background-color: #FFFF00;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container first-container">
+        <div id="first" class="circle first"></div>
+        <div id="second" class="circle second"></div>
+    </div>
+      
+    <div class="container second-container">
+        <div id="third" class="circle third"></div>
+        <div id="fourth" class="circle fourth"></div>
+    </div>
+      
+    <div class="button-container">
+        <button class="strBtn" onclick="startAnimation()">
+        Start
+        </button>
+        <button class="stpBtn" onclick="stopAnimation()">
+        Stop
+        </button>
+    </div>
+      <script>
+
+        const first = document.getElementById("first");
+        const second = document.getElementById("second");
+        const third = document.getElementById("third");
+        const fourth = document.getElementById("fourth");
+        function startAnimation() {
+            first.classList.add("animate-first");
+        second.classList.add("animate-second");
+        third.classList.add("animate-third");
+        fourth.classList.add("animate-fourth");
+        }
+
+        function stopAnimation() {
+            first.classList.remove("animate-first");
+        second.classList.remove("animate-second");
+        third.classList.remove("animate-third");
+        fourth.classList.remove("animate-fourth");
+        }
+      </script>
+</body>
+</html>
